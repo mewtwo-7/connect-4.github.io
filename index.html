@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Connect 4 - OP wala</title>
+    <style>
+    	* { padding: 0; margin: 0; }
+    	canvas { background: #eee; display: block; margin: 80px 700px; }
+		body {background: "white"; }
+		/* h1 {display: flex; margin: 20px 850px auto; color: rgb(33, 206, 10);} */
+    </style>
+</head>
+<body>
+		<!-- <h1><img src="/index.png" alt="" class="co"></h1> -->
+<!-- <canvas id="myCanvas" width="720" height="720"></canvas> -->
+    <div id="Game">
+        <h1>Play game here !!</h1>
+        <button type="button" onclick="loadGame()">Play</button>
+    </div>
+<script>
+    function loadGame()
+    {
+        var kholdo = new XMLHttpRequest();
+        kholdo.onreadystatechange = function() 
+        {
+            if (this.readyState == 4 && this.status == 200) 
+            {
+                document.getElementById("Game").innerHTML =
+                this.responseText;
+            }
+        };
+        kholdo.open("GET", "index2.html", true);
+        kholdo.send();
+    }
+</script>
+
+</body>
+</html>
